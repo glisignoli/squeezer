@@ -16,8 +16,7 @@ interactions:
     uri: http://pulp.example.org/pulp/api/v3/repositories/deb/apt/?name=test_deb_repository&offset=0&limit=1
   response:
     body:
-      string: '{"count":1,"next":null,"previous":null,"results":[{"pulp_href":"/pulp/api/v3/repositories/deb/apt/01982eb0-e6be-7a91-9808-a9459b00e1dd/","prn":"prn:deb.aptrepository:01982eb0-e6be-7a91-9808-a9459b00e1dd","pulp_created":"2025-07-21T20:33:22.112649Z","pulp_last_updated":"2025-07-21T20:33:23.469293Z","versions_href":"/pulp/api/v3/repositories/deb/apt/01982eb0-e6be-7a91-9808-a9459b00e1dd/versions/","pulp_labels":{},"latest_version_href":"/pulp/api/v3/repositories/deb/apt/01982eb0-e6be-7a91-9808-a9459b00e1dd/versions/0/","name":"test_deb_repository","description":"repository
-        created via ansible","retain_repo_versions":null,"remote":null,"publish_upstream_release_fields":true,"signing_service":null,"signing_service_release_overrides":{}}]}'
+      string: '{"count":1,"next":null,"previous":null,"results":[{"pulp_href":"/pulp/api/v3/repositories/deb/apt/01982eb5-5d98-77b6-8147-cde5b9a15dab/","prn":"prn:deb.aptrepository:01982eb5-5d98-77b6-8147-cde5b9a15dab","pulp_created":"2025-07-21T20:38:14.682255Z","pulp_last_updated":"2025-07-21T20:38:30.547703Z","versions_href":"/pulp/api/v3/repositories/deb/apt/01982eb5-5d98-77b6-8147-cde5b9a15dab/versions/","pulp_labels":{},"latest_version_href":"/pulp/api/v3/repositories/deb/apt/01982eb5-5d98-77b6-8147-cde5b9a15dab/versions/1/","name":"test_deb_repository","description":null,"retain_repo_versions":null,"remote":null,"publish_upstream_release_fields":true,"signing_service":null,"signing_service_release_overrides":{}}]}'
     headers:
       Access-Control-Expose-Headers:
       - Correlation-ID
@@ -26,15 +25,15 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '743'
+      - '715'
       Content-Type:
       - application/json
       Correlation-ID:
-      - d98f19f0e24d4c96abbd9efd6116c4ed
+      - cb60a7a1529c488ebc4d08f8a8494625
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Mon, 21 Jul 2025 20:33:24 GMT
+      - Mon, 21 Jul 2025 20:38:40 GMT
       Referrer-Policy:
       - same-origin
       Server:

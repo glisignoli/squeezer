@@ -2,19 +2,71 @@ interactions:
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
+      ? !!python/object/apply:multidict._multidict.istr
+      - Accept
+      : - application/json
       Accept-Encoding:
       - gzip, deflate
       Connection:
       - keep-alive
-      User-Agent:
-      - Squeezer/0.1.0-dev
+      ? !!python/object/apply:multidict._multidict.istr
+      - User-Agent
+      : - Squeezer/0.2.0-dev
     method: GET
-    uri: http://pulp.example.org/pulp/api/v3/repositories/deb/apt/?offset=0&limit=1000
+    uri: http://pulp.example.org/pulp/api/v3/remotes/deb/apt/?name=test_deb_remote&offset=0&limit=1
   response:
     body:
-      string: '{"count":1,"next":null,"previous":null,"results":[{"pulp_href":"/pulp/api/v3/repositories/deb/apt/0194a2a7-599f-71a6-ab5b-32eacd760782/","prn":"prn:deb.aptrepository:0194a2a7-599f-71a6-ab5b-32eacd760782","pulp_created":"2025-01-26T12:47:44.032982Z","pulp_last_updated":"2025-01-26T12:47:45.527172Z","versions_href":"/pulp/api/v3/repositories/deb/apt/0194a2a7-599f-71a6-ab5b-32eacd760782/versions/","pulp_labels":{},"latest_version_href":"/pulp/api/v3/repositories/deb/apt/0194a2a7-599f-71a6-ab5b-32eacd760782/versions/0/","name":"test_deb_repository","description":"repository
+      string: '{"count":1,"next":null,"previous":null,"results":[{"pulp_href":"/pulp/api/v3/remotes/deb/apt/01982eb0-c729-7e6a-86c1-9879aaa04efe/","prn":"prn:deb.aptremote:01982eb0-c729-7e6a-86c1-9879aaa04efe","pulp_created":"2025-07-21T20:33:14.026511Z","pulp_last_updated":"2025-07-21T20:33:14.026529Z","name":"test_deb_remote","url":"https://fixtures.pulpproject.org/debian/","ca_cert":null,"client_cert":null,"tls_validation":true,"proxy_url":null,"pulp_labels":{},"download_concurrency":null,"max_retries":null,"policy":"immediate","total_timeout":null,"connect_timeout":null,"sock_connect_timeout":null,"sock_read_timeout":null,"headers":null,"rate_limit":null,"hidden_fields":[{"name":"client_key","is_set":false},{"name":"proxy_username","is_set":false},{"name":"proxy_password","is_set":false},{"name":"username","is_set":false},{"name":"password","is_set":false}],"distributions":"ragnarok","components":"jotunheimr","architectures":"ppc64","sync_sources":false,"sync_udebs":false,"sync_installer":false,"gpgkey":null,"ignore_missing_package_indices":false}]}'
+    headers:
+      Access-Control-Expose-Headers:
+      - Correlation-ID
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1054'
+      Content-Type:
+      - application/json
+      Correlation-ID:
+      - d926708155224fa8b82ca7652c256c25
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Mon, 21 Jul 2025 20:33:24 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.22.1
+      Vary:
+      - Accept
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      ? !!python/object/apply:multidict._multidict.istr
+      - Accept
+      : - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Correlation-Id:
+      - d926708155224fa8b82ca7652c256c25
+      ? !!python/object/apply:multidict._multidict.istr
+      - User-Agent
+      : - Squeezer/0.2.0-dev
+    method: GET
+    uri: http://pulp.example.org/pulp/api/v3/repositories/deb/apt/?name=test_deb_repository&offset=0&limit=1
+  response:
+    body:
+      string: '{"count":1,"next":null,"previous":null,"results":[{"pulp_href":"/pulp/api/v3/repositories/deb/apt/01982eb0-e6be-7a91-9808-a9459b00e1dd/","prn":"prn:deb.aptrepository:01982eb0-e6be-7a91-9808-a9459b00e1dd","pulp_created":"2025-07-21T20:33:22.112649Z","pulp_last_updated":"2025-07-21T20:33:23.469293Z","versions_href":"/pulp/api/v3/repositories/deb/apt/01982eb0-e6be-7a91-9808-a9459b00e1dd/versions/","pulp_labels":{},"latest_version_href":"/pulp/api/v3/repositories/deb/apt/01982eb0-e6be-7a91-9808-a9459b00e1dd/versions/0/","name":"test_deb_repository","description":"repository
         created via ansible","retain_repo_versions":null,"remote":null,"publish_upstream_release_fields":true,"signing_service":null,"signing_service_release_overrides":{}}]}'
     headers:
       Access-Control-Expose-Headers:
@@ -28,11 +80,166 @@ interactions:
       Content-Type:
       - application/json
       Correlation-ID:
-      - 18755f01ae3a465ab924358650ddf1fb
+      - d926708155224fa8b82ca7652c256c25
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Sun, 26 Jan 2025 12:47:47 GMT
+      - Mon, 21 Jul 2025 20:33:25 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.22.1
+      Vary:
+      - Accept
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"remote": "/pulp/api/v3/remotes/deb/apt/01982eb0-c729-7e6a-86c1-9879aaa04efe/"}'
+    headers:
+      ? !!python/object/apply:multidict._multidict.istr
+      - Accept
+      : - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '80'
+      Correlation-Id:
+      - d926708155224fa8b82ca7652c256c25
+      ? !!python/object/apply:multidict._multidict.istr
+      - User-Agent
+      : - Squeezer/0.2.0-dev
+      content-type:
+      - application/json
+    method: PATCH
+    uri: http://pulp.example.org/pulp/api/v3/repositories/deb/apt/01982eb0-e6be-7a91-9808-a9459b00e1dd/
+  response:
+    body:
+      string: '{"task":"/pulp/api/v3/tasks/01982eb0-f33e-7204-9204-354fe34f2018/"}'
+    headers:
+      Access-Control-Expose-Headers:
+      - Correlation-ID
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '67'
+      Content-Type:
+      - application/json
+      Correlation-ID:
+      - d926708155224fa8b82ca7652c256c25
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Mon, 21 Jul 2025 20:33:25 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.22.1
+      Vary:
+      - Accept
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 202
+      message: Accepted
+- request:
+    body: null
+    headers:
+      ? !!python/object/apply:multidict._multidict.istr
+      - Accept
+      : - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Correlation-Id:
+      - d926708155224fa8b82ca7652c256c25
+      ? !!python/object/apply:multidict._multidict.istr
+      - User-Agent
+      : - Squeezer/0.2.0-dev
+    method: GET
+    uri: http://pulp.example.org/pulp/api/v3/tasks/01982eb0-f33e-7204-9204-354fe34f2018/
+  response:
+    body:
+      string: '{"pulp_href":"/pulp/api/v3/tasks/01982eb0-f33e-7204-9204-354fe34f2018/","prn":"prn:core.task:01982eb0-f33e-7204-9204-354fe34f2018","pulp_created":"2025-07-21T20:33:25.310825Z","pulp_last_updated":"2025-07-21T20:33:25.310841Z","state":"completed","name":"pulpcore.app.tasks.base.ageneral_update","logging_cid":"d926708155224fa8b82ca7652c256c25","created_by":"/pulp/api/v3/users/1/","unblocked_at":"2025-07-21T20:33:25.330442Z","started_at":"2025-07-21T20:33:25.333106Z","finished_at":"2025-07-21T20:33:25.351833Z","error":null,"worker":null,"parent_task":null,"child_tasks":[],"task_group":null,"progress_reports":[],"created_resources":[],"reserved_resources_record":["prn:deb.aptrepository:01982eb0-e6be-7a91-9808-a9459b00e1dd","shared:prn:core.domain:f396c4c4-ffa7-419e-8342-c31ba4b1e98d"]}'
+    headers:
+      Access-Control-Expose-Headers:
+      - Correlation-ID
+      Allow:
+      - GET, PATCH, DELETE, HEAD, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '792'
+      Content-Type:
+      - application/json
+      Correlation-ID:
+      - d926708155224fa8b82ca7652c256c25
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Mon, 21 Jul 2025 20:33:25 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.22.1
+      Vary:
+      - Accept
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      ? !!python/object/apply:multidict._multidict.istr
+      - Accept
+      : - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Correlation-Id:
+      - d926708155224fa8b82ca7652c256c25
+      ? !!python/object/apply:multidict._multidict.istr
+      - User-Agent
+      : - Squeezer/0.2.0-dev
+    method: GET
+    uri: http://pulp.example.org/pulp/api/v3/repositories/deb/apt/01982eb0-e6be-7a91-9808-a9459b00e1dd/
+  response:
+    body:
+      string: '{"pulp_href":"/pulp/api/v3/repositories/deb/apt/01982eb0-e6be-7a91-9808-a9459b00e1dd/","prn":"prn:deb.aptrepository:01982eb0-e6be-7a91-9808-a9459b00e1dd","pulp_created":"2025-07-21T20:33:22.112649Z","pulp_last_updated":"2025-07-21T20:33:25.345864Z","versions_href":"/pulp/api/v3/repositories/deb/apt/01982eb0-e6be-7a91-9808-a9459b00e1dd/versions/","pulp_labels":{},"latest_version_href":"/pulp/api/v3/repositories/deb/apt/01982eb0-e6be-7a91-9808-a9459b00e1dd/versions/0/","name":"test_deb_repository","description":"repository
+        created via ansible","retain_repo_versions":null,"remote":"/pulp/api/v3/remotes/deb/apt/01982eb0-c729-7e6a-86c1-9879aaa04efe/","publish_upstream_release_fields":true,"signing_service":null,"signing_service_release_overrides":{}}'
+    headers:
+      Access-Control-Expose-Headers:
+      - Correlation-ID
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '755'
+      Content-Type:
+      - application/json
+      Correlation-ID:
+      - d926708155224fa8b82ca7652c256c25
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Mon, 21 Jul 2025 20:33:25 GMT
       Referrer-Policy:
       - same-origin
       Server:
