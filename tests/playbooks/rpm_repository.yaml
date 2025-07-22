@@ -66,6 +66,29 @@
         that:
           - 'result.changed == false'
 
+    - name: Remove remote from repository
+      pulp.squeezer.rpm_repository:
+        name: test_rpm_repository
+        remote: ""
+        state: present
+      register: result
+    - name: Verify remove remote from repository
+      assert:
+        that:
+          - 'result.changed == true'
+          - 'not result.repository.remote'
+
+    - name: Remove remote from repository (2nd try)
+      pulp.squeezer.rpm_repository:
+        name: test_rpm_repository
+        remote: ""
+        state: present
+      register: result
+    - name: Verify remove remote from repository (2nd try)
+      assert:
+        that:
+          - 'result.changed == false'
+
     - name: Add description to repository
       pulp.squeezer.rpm_repository:
         name: test_rpm_repository

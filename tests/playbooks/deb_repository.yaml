@@ -103,7 +103,7 @@
         that:
           - result.changed == true
           - result.repository.description == "repository created via ansible"
-          - result.repository.remote == remote_result.remote.pulp_href
+          - result.repository.remote is startswith('/pulp/api/v3/remote/deb/apt/')
 
     - name: Add remote to repository (2nd try)
       pulp.squeezer.deb_repository:
@@ -185,7 +185,7 @@
     - name: Remove remote from repository (2nd try)
       pulp.squeezer.deb_repository:
         name: test_deb_repository
-        remote: null
+        remote: ""
         state: present
       register: result
     - name: Verify remove remote from repository (2nd try)
